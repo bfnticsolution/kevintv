@@ -1061,30 +1061,9 @@
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="animate">AFRICA BOX <span>SANS LIMITES</span></h1>
+                <h1 class="animate">TV DIRECT<span>SANS LIMITES</span></h1>
                 <p class="hero-subtitle animate delay-1">+30,000 Chaînes • Films • Séries • Sports • <span class="highlight">GRATUIT</span></p>
                 <p class="animate delay-1">L'application <strong>N°1</strong> pour regarder toutes vos chaînes préférées en direct sur tous vos appareils.</p>
-                
-                <div class="countdown animate delay-2">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="days">00</div>
-                        <div class="countdown-label">Jours</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">00</div>
-                        <div class="countdown-label">Heures</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">00</div>
-                        <div class="countdown-label">Minutes</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">00</div>
-                        <div class="countdown-label">Secondes</div>
-                    </div>
-                </div>
-                
-                <p class="animate delay-2"><span class="urgency">⚠️ OFFRE SPÉCIALE LIMITÉE :</span> Téléchargez maintenant et obtenez un accès premium gratuit!</p>
                 
                 <div class="hero-btns animate delay-3">
                     <a href="https://play.google.com/store/apps/details?id=africa.boxtvbf" class="btn btn-download">
@@ -1174,7 +1153,7 @@
         <div class="container">
             <h2 class="section-title">Télécharger AFRICA BOX</h2>
             <div class="download-content">
-                <p class="animate">Installez l'application AFRICA BOX sur votre appareil et profitez du meilleur de la télévision africaine <strong>gratuitement</strong>.</p>
+                <p class="animate">Installez l'application AFRICA BOX sur votre appareil et profitez du meilleur de la télévision sur Android <strong>gratuitement</strong>.</p>
                 
                 <div class="download-options">
                     <div class="download-card animate delay-1 popular">
@@ -1294,7 +1273,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star-half-alt"></i>
                     </div>
-                    <p class="testimonial-text">"La VOD est incroyable! Des milliers de films et séries africains que je ne trouve nulle part ailleurs. Le support WhatsApp est très réactif quand on a un problème."</p>
+                    <p class="testimonial-text">"La VOD est incroyable! Des milliers de films et séries que je ne trouve nulle part ailleurs."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">JK</div>
                         <div>
@@ -1401,40 +1380,7 @@
                 }
             });
 
-            // Countdown timer
-            function updateCountdown() {
-                const now = new Date();
-                const target = new Date();
-                target.setHours(23, 59, 59, 999);
-                
-                const diff = target - now;
-                
-                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                
-                const daysEl = document.getElementById('days');
-                const hoursEl = document.getElementById('hours');
-                const minutesEl = document.getElementById('minutes');
-                const secondsEl = document.getElementById('seconds');
-                
-                if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
-                if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
-                if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
-                if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
-            }
-            
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-            
-            // FAQ toggle
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const item = question.parentElement;
-                    item.classList.toggle('active');
-                });
-            });
+    
             
             // Détection de l'appareil pour améliorations spécifiques
             function detectMobile() {
