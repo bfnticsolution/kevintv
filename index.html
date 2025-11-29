@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFRICA BOX - Meilleure Application IPTV Africaine [30,000+ Chaînes] Gratuite</title>
+    <title>AFRICA BOX - Meilleure Application TV Africaine [30,000+ Chaînes] Gratuite</title>
     <meta name="facebook-domain-verification" content="s3qcobgug8e9zxsgyhd1x9thy731qs" />
-    <meta name="description" content="⭐ AFRICA BOX - Application IPTV N°1 en Afrique. Regardez 30,000+ chaînes TV, films, séries, sport et contenus premium. Téléchargement gratuit et instantané !">
-    <meta name="keywords" content="IPTV Afrique, application TV africaine, chaînes africaines gratuites, football africain, séries africaines, films africains, sport en direct, Africa Box TV, IPTV gratuit">
+    <meta name="description" content="⭐ AFRICA BOX - Application TV N°1 en Afrique. Regardez 30,000+ chaînes TV, films, séries, sport et contenus premium. Téléchargement gratuit et instantané !">
+    <meta name="keywords" content="TV Afrique, application TV africaine, chaînes africaines gratuites, football africain, séries africaines, films africains, sport en direct, Africa Box TV, TV gratuit">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="AFRICA BOX">
     <meta name="theme-color" content="#ff6a00">
@@ -26,13 +26,16 @@
     <meta property="og:image" content="https://africaboxtv.live/africaboxlogo.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="AFRICA BOX">
+    <meta property="og:locale" content="fr_FR">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://africaboxtv.live">
-    <meta property="twitter:title" content="AFRICA BOX - IPTV Africaine [30,000+ Chaînes GRATUITES]">
+    <meta property="twitter:title" content="AFRICA BOX - TV Africaine [30,000+ Chaînes GRATUITES]">
     <meta property="twitter:description" content="L'application TV N°1 en Afrique - Regardez tous vos contenus préférés gratuitement.">
     <meta property="twitter:image" content="https://africaboxtv.live/africaboxlogo.png">
+    <meta property="twitter:site" content="@AfricaBoxTV">
     
     <!-- Autres balises importantes -->
     <meta name="apple-mobile-web-app-title" content="AFRICA BOX">
@@ -48,6 +51,7 @@
     
     <!-- Preload des images importantes -->
     <link rel="preload" href="africaboxlogo.png" as="image">
+    
     <!-- Schema.org markup for Google -->
     <script type="application/ld+json">
     {
@@ -72,7 +76,54 @@
       "author": {
         "@type": "Organization",
         "name": "AFRICA BOX"
-      }
+      },
+      "url": "https://africaboxtv.live"
+    }
+    </script>
+    
+    <!-- Schema pour Organisation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AFRICA BOX",
+      "url": "https://africaboxtv.live",
+      "logo": "https://africaboxtv.live/africaboxlogo.png",
+      "description": "Application TV N°1 en Afrique offrant plus de 30,000 chaînes TV, films, séries et contenus sportifs",
+      "sameAs": [
+        "https://www.facebook.com/AfricaBoxTV",
+        "https://twitter.com/AfricaBoxTV"
+      ]
+    }
+    </script>
+    
+    <!-- Schema pour FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "Comment télécharger AFRICA BOX ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vous pouvez télécharger AFRICA BOX directement depuis le Google Play Store ou via le fichier APK disponible sur notre site."
+        }
+      }, {
+        "@type": "Question",
+        "name": "L'application est-elle vraiment gratuite ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, AFRICA BOX est entièrement gratuit. Vous avez accès à toutes les chaînes et contenus sans aucun abonnement."
+        }
+      }, {
+        "@type": "Question",
+        "name": "Sur quels appareils fonctionne AFRICA BOX ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AFRICA BOX fonctionne sur tous les appareils Android : smartphones, tablettes, TV Box et Smart TV."
+        }
+      }]
     }
     </script>
     
@@ -1052,97 +1103,258 @@
                 margin-bottom: 8px;
             }
         }
+        
         /* Styles pour le carrousel de captures d'écran */
-.screenshots-container {
-    position: relative;
-    max-width: 800px;
-    margin: 40px auto 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
+        .screenshots-container {
+            position: relative;
+            max-width: 800px;
+            margin: 40px auto 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
 
-.screenshots-slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-}
+        .screenshots-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
 
-.screenshot {
-    flex: 0 0 auto;
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
+        .screenshot {
+            flex: 0 0 auto;
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
 
-.screenshot img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
 
-.carousel-controls {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    z-index: 5;
-}
+        .carousel-controls {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 5;
+        }
 
-.carousel-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
-.carousel-dot.active {
-    background: var(--primary);
-    transform: scale(1.2);
-}
+        .carousel-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
 
-.carousel-arrows {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    padding: 0 15px;
-    z-index: 5;
-}
+        .carousel-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 15px;
+            z-index: 5;
+        }
 
-.carousel-arrow {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
 
-.carousel-arrow:hover {
-    background: var(--primary);
-}
+        .carousel-arrow:hover {
+            background: var(--primary);
+        }
 
-@media (max-width: 768px) {
-    .carousel-arrows {
-        display: none;
-    }
-}
+        @media (max-width: 768px) {
+            .carousel-arrows {
+                display: none;
+            }
+        }
+        
+        /* Styles pour le carrousel de logos */
+        .channels-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            padding: 60px 0;
+        }
+        
+        .channels-carousel-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 40px auto 0;
+            overflow: hidden;
+            padding: 0 40px;
+        }
+        
+        .channels-carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .channel-logo {
+            flex: 0 0 auto;
+            width: 150px;
+            height: 80px;
+            margin: 0 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .channel-logo:hover {
+            background: rgba(255, 106, 0, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .channel-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            filter: grayscale(0.3);
+            transition: filter 0.3s ease;
+        }
+        
+        .channel-logo:hover img {
+            filter: grayscale(0);
+        }
+        
+        .channels-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 10px;
+            z-index: 5;
+        }
+        
+        .channels-arrow {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .channels-arrow:hover {
+            background: var(--primary);
+        }
+        
+        .channels-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+        
+        .channels-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .channels-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            .channels-carousel-container {
+                padding: 0 20px;
+            }
+            
+            .channel-logo {
+                width: 120px;
+                height: 60px;
+                margin: 0 10px;
+            }
+            
+            .channels-arrow {
+                width: 35px;
+                height: 35px;
+            }
+        }
+        
+        /* Breadcrumb pour SEO */
+        .breadcrumb {
+            padding: 10px 0;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb span {
+            margin: 0 5px;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="/" class="logo">
+                    <img src="africaboxlogo.png" alt="Logo AFRICA BOX - Application TV Africaine">
+                    AFRICA BOX
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#features">Fonctionnalités</a></li>
+                    <li><a href="#download">Télécharger</a></li>
+                    <li><a href="#screenshots">Captures</a></li>
+                    <li><a href="#channels">Chaînes</a></li>
+                    <li><a href="#testimonials">Avis</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars open-menu"></i>
+                    <i class="fas fa-times close-menu"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb pour SEO -->
+    <div class="container breadcrumb">
+        <a href="/">Accueil</a> <span>></span> Application TV AFRICA BOX
+    </div>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -1176,7 +1388,7 @@
                             <div class="user-avatar">MA</div>
                             <div class="user-avatar">SK</div>
                         </div>
-                        <span>+326,000 utilisateurs satisfaits</span>
+                        <span>+1,326,000 utilisateurs satisfaits</span>
                     </div>
                 </div>
             </div>
@@ -1194,7 +1406,7 @@
                         <i class="fas fa-tv"></i>
                     </div>
                     <h3>30,000+ Chaînes <span class="badge">NOUVEAU</span></h3>
-                    <p>Accédez à des milliers de chaînes internationales, sport, films, séires et chaînes africaines en qualité HD.</p>
+                    <p>Accédez à des milliers de chaînes internationales, sport, films, séries et chaînes africaines en qualité HD.</p>
                 </div>
                 <div class="feature-card animate delay-1">
                     <div class="feature-icon">
@@ -1290,45 +1502,116 @@
         </div>
     </section>
 
-   <!-- Screenshots Section Modifiée -->
-<section id="screenshots" class="screenshots">
-    <div class="container">
-        <h2 class="section-title">Découvrez l'application</h2>
-        <div class="screenshots-container">
-            <div class="screenshots-slider">
-                <div class="screenshot">
-                    <img src="/ecran1.jpg" alt="Interface Africa Box - Accueil" loading="lazy">
+    <!-- Screenshots Section Modifiée -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">Découvrez l'application</h2>
+            <div class="screenshots-container">
+                <div class="screenshots-slider">
+                    <div class="screenshot">
+                        <img src="https://i.ibb.co/nqf0Hmrh/Add-Text-11-28-11-39-24.png" alt="Interface Africa Box - Accueil" loading="lazy">
+                    </div>
+                    <div class="screenshot">
+                        <img src="https://i.ibb.co/V0tMG1hR/Add-Text-11-28-12-46-34.png" alt="Africa Box - Chaînes TV" loading="lazy">
+                    </div>
+                    <div class="screenshot">
+                        <img src="https://i.ibb.co/SXYXctZ5/Add-Text-11-28-01-05-26.png" alt="Africa Box - Films et séries" loading="lazy">
+                    </div>
+                    <div class="screenshot">
+                        <img src="https://i.ibb.co/sJpqpC5C/Add-Text-11-28-03-26-38.jpg" alt="Africa Box - Sports en direct" loading="lazy">
+                    </div>
                 </div>
-                <div class="screenshot">
-                    <img src="/ecran2.jpg" alt="Africa Box - Chaînes TV" loading="lazy">
+                
+                <div class="carousel-arrows">
+                    <div class="carousel-arrow prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="carousel-arrow next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
                 </div>
-                <div class="screenshot">
-                    <img src="/ecran3.jpg" alt="Africa Box - Films et séries" loading="lazy">
+                
+                <div class="carousel-controls">
+                    <div class="carousel-dot active" data-index="0"></div>
+                    <div class="carousel-dot" data-index="1"></div>
+                    <div class="carousel-dot" data-index="2"></div>
+                    <div class="carousel-dot" data-index="3"></div>
                 </div>
-                <div class="screenshot">
-                    <img src="/ecran4.jpg" alt="Africa Box - Sports en direct" loading="lazy">
-                </div>
-            </div>
-            
-            <div class="carousel-arrows">
-                <div class="carousel-arrow prev">
-                    <i class="fas fa-chevron-left"></i>
-                </div>
-                <div class="carousel-arrow next">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </div>
-            
-            <div class="carousel-controls">
-                <div class="carousel-dot active" data-index="0"></div>
-                <div class="carousel-dot" data-index="1"></div>
-                <div class="carousel-dot" data-index="2"></div>
-                <div class="carousel-dot" data-index="3"></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Channels Section -->
+    <section id="channels" class="channels-section">
+        <div class="container">
+            <h2 class="section-title">Chaînes et Bouquets Disponibles</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Découvrez une sélection des chaînes et bouquets disponibles sur AFRICA BOX</p>
+            
+            <div class="channels-carousel-container">
+                <div class="channels-carousel">
+                    <!-- Logos des chaînes TV -->
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/nqf0Hmrh/Add-Text-11-28-11-39-24.png" alt="Logo Canal+" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/V0tMG1hR/Add-Text-11-28-12-46-34.png" alt="Logo BeIN Sports" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/SXYXctZ5/Add-Text-11-28-01-05-26.png" alt="Logo RTI" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/rDDSfYD/tv-orange-1024x659.jpg" alt="Logo ORTP" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/4w4t3gCQ/Add-Text-08-15-12-42-35.png" alt="Logo 2STV" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/WvW7y24q/Add-Text-08-15-12-43-02.png" alt="Logo TV5 Monde" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/GgcWnnT/image-25.png" alt="Logo France 24" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/gbGQ20NF/new-world-1-300.jpg" alt="Logo BBC" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/1YrwpZQJ/BFfLV0y.png" alt="Logo CNN" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/TBgYY53n/images-4.png" alt="Logo ESPN" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/XxYT5L0v/iz9qHZk.png" alt="Logo Al Jazeera" loading="lazy">
+                    </div>
+                    <div class="channel-logo">
+                        <img src="https://i.ibb.co/LzyTXPmv/canal2int2.png" alt="Logo MTV" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="channels-controls">
+                    <div class="channels-arrow channels-prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="channels-arrow channels-next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="channels-dots">
+                <div class="channels-dot active" data-index="0"></div>
+                <div class="channels-dot" data-index="1"></div>
+                <div class="channels-dot" data-index="2"></div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p>Et bien plus encore! <strong>30,000+ chaînes</strong> de tous les pays africains et internationaux.</p>
+                <a href="#download" class="btn" style="margin-top: 15px;">
+                    <i class="fas fa-tv"></i> Voir toutes les chaînes
+                </a>
+            </div>
+        </div>
+    </section>
     
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
@@ -1343,7 +1626,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p class="testimonial-text">"J'ai testé plusieurs applications IPTV mais Africa Box est de loin la meilleure! La qualité des chaînes est exceptionnelle et je peux regarder tous les matchs de football africain sans coupure."</p>
+                    <p class="testimonial-text">"J'ai testé plusieurs applications TV mais Africa Box est de loin la meilleure! La qualité des chaînes est exceptionnelle et je peux regarder tous les matchs de football africain sans coupure."</p>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">MD</div>
                         <div>
@@ -1392,8 +1675,87 @@
         </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-list">
+                <div class="faq-item animate">
+                    <div class="faq-question">
+                        <span>Comment télécharger AFRICA BOX ?</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Vous pouvez télécharger AFRICA BOX directement depuis le Google Play Store ou via le fichier APK disponible sur notre site. L'installation est simple et rapide.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate delay-1">
+                    <div class="faq-question">
+                        <span>L'application est-elle vraiment gratuite ?</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Oui, AFRICA BOX est entièrement gratuit. Vous avez accès à toutes les chaînes et contenus sans aucun abonnement ni frais cachés.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate delay-2">
+                    <div class="faq-question">
+                        <span>Sur quels appareils fonctionne AFRICA BOX ?</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>AFRICA BOX fonctionne sur tous les appareils Android : smartphones, tablettes, TV Box et Smart TV. Vous pouvez également l'utiliser sur PC via un émulateur Android.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item animate delay-3">
+                    <div class="faq-question">
+                        <span>Quelle est la qualité des chaînes ?</span>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>La majorité des chaînes sont disponibles en qualité HD et Full HD. La qualité d'image dépend également de votre connexion internet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>AFRICA BOX</h3>
+                    <p>L'application TV N°1 en Afrique avec plus de 30,000 chaînes TV, films, séries et contenus sportifs.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#download">Télécharger</a></li>
+                        <li><a href="#channels">Chaînes</a></li>
+                        <li><a href="#testimonials">Avis</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'aide</a></li>
+                        <li><a href="#">Contactez-nous</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
                 <div class="footer-column">
                     <h3>Télécharger</h3>
                     <p>Disponible sur le Google Play Store</p>
@@ -1408,6 +1770,10 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp button -->
+    <a href="https://wa.me/1234567890?text=Bonjour%20AFRICA%20BOX,%20j'aimerais%20en%20savoir%20plus" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
     // Menu mobile
@@ -1486,7 +1852,7 @@
             }
         });
 
-        // Code pour le carrousel automatique
+        // Code pour le carrousel de captures d'écran
         const slider = document.querySelector('.screenshots-slider');
         const slides = document.querySelectorAll('.screenshot');
         const dots = document.querySelectorAll('.carousel-dot');
@@ -1579,6 +1945,88 @@
             });
         }
         
+        // Code pour le carrousel de logos de chaînes
+        const channelsCarousel = document.querySelector('.channels-carousel');
+        const channelLogos = document.querySelectorAll('.channel-logo');
+        const channelsPrev = document.querySelector('.channels-prev');
+        const channelsNext = document.querySelector('.channels-next');
+        const channelsDots = document.querySelectorAll('.channels-dot');
+        
+        if (channelsCarousel && channelLogos.length > 0) {
+            let currentChannelSet = 0;
+            const channelSets = 3; // 3 ensembles de logos
+            const logosPerSet = 4; // 4 logos visibles à la fois sur mobile
+            
+            // Fonction pour aller à un ensemble de logos spécifique
+            function goToChannelSet(index) {
+                if (index < 0) {
+                    index = channelSets - 1;
+                } else if (index >= channelSets) {
+                    index = 0;
+                }
+                
+                const translateX = -index * (100 / channelSets);
+                channelsCarousel.style.transform = `translateX(${translateX}%)`;
+                currentChannelSet = index;
+                
+                // Mettre à jour les points de navigation
+                channelsDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentChannelSet);
+                });
+            }
+            
+            // Fonction pour passer à l'ensemble suivant
+            function nextChannelSet() {
+                goToChannelSet(currentChannelSet + 1);
+            }
+            
+            // Démarrer le défilement automatique
+            function startChannelsAutoPlay() {
+                setInterval(nextChannelSet, 5000); // Change toutes les 5 secondes
+            }
+            
+            // Événements pour les flèches de navigation
+            if (channelsNext) {
+                channelsNext.addEventListener('click', nextChannelSet);
+            }
+            
+            if (channelsPrev) {
+                channelsPrev.addEventListener('click', () => {
+                    goToChannelSet(currentChannelSet - 1);
+                });
+            }
+            
+            // Événements pour les points de navigation
+            channelsDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const setIndex = parseInt(this.getAttribute('data-index'));
+                    goToChannelSet(setIndex);
+                });
+            });
+            
+            // Démarrer le carrousel automatique
+            startChannelsAutoPlay();
+        }
+        
+        // FAQ - Ouvrir/fermer les questions
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Fermer tous les autres éléments FAQ
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Basculer l'état actif de l'élément cliqué
+                item.classList.toggle('active');
+            });
+        });
+        
         // Détection de l'appareil pour améliorations spécifiques
         function detectMobile() {
             if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
@@ -1587,6 +2035,28 @@
         }
         
         detectMobile();
+        
+        // Chargement paresseux des images
+        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        } else {
+            // Fallback pour les navigateurs qui ne supportent pas IntersectionObserver
+            lazyImages.forEach(img => {
+                img.classList.add('loaded');
+            });
+        }
     });
 
     // Track downloads
@@ -1599,6 +2069,14 @@
             fbq('track', 'InitiateCheckout', {
                 content_type: 'application',
                 content_name: 'Africa Box ' + type
+            });
+        }
+        
+        // Exemple pour Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'download', {
+                'event_category': 'application',
+                'event_label': 'Africa Box ' + type
             });
         }
     }
