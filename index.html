@@ -177,7 +177,7 @@
             color: var(--light);
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-text-size-adjust: 100%; /* Empêche le zoom texte sur iOS */
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
@@ -230,7 +230,7 @@
             font-size: 1rem;
             position: relative;
             overflow: hidden;
-            min-width: 44px; /* Taille tactile minimale */
+            min-width: 44px;
             min-height: 44px;
             display: flex;
             align-items: center;
@@ -748,7 +748,7 @@
             gap: 15px;
             padding: 15px 10px;
             scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch; /* Défilement fluide iOS */
+            -webkit-overflow-scrolling: touch;
         }
 
         .screenshots-slider::-webkit-scrollbar {
@@ -1088,17 +1088,14 @@
         
         /* Améliorations pour le tactile */
         @media (max-width: 768px) {
-            /* Éviter le zoom sur les inputs */
             input, select, textarea {
                 font-size: 16px !important;
             }
             
-            /* Améliorer la lisibilité du texte */
             p, li {
                 line-height: 1.6;
             }
             
-            /* Espacement pour éviter le toucher accidentel */
             .btn, .social-links a, .faq-question {
                 margin-bottom: 8px;
             }
@@ -1323,6 +1320,109 @@
         .breadcrumb span {
             margin: 0 5px;
         }
+        
+        /* Modal Styles - NOUVEAU */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border-radius: 16px;
+            padding: 30px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            border: 2px solid var(--primary);
+            box-shadow: 0 15px 35px rgba(255, 106, 0, 0.3);
+            animation: fadeIn 0.5s ease;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 106, 0, 0.2);
+        }
+
+        .modal-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .modal-text {
+            margin-bottom: 25px;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .modal-urgency {
+            background: rgba(255, 106, 0, 0.15);
+            padding: 12px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: bold;
+            border: 1px solid var(--primary);
+        }
+
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .modal-button {
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .modal-countdown {
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #ffcc00;
+        }
+
+        .modal-countdown-number {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffcc00;
+        }
     </style>
 </head>
 <body>
@@ -1362,10 +1462,21 @@
             <div class="hero-content">
                 <h1 class="animate">TV DIRECT<span>SANS LIMITES</span></h1>
                 <p class="hero-subtitle animate delay-1">+30,000 Chaînes • Films • Séries • Sports • <span class="highlight">GRATUIT</span></p>
+                
+                <!-- Bannière d'urgence NOUVEAU -->
+                <div class="urgency-banner animate delay-2" style="margin: 15px 0; padding: 12px; background: rgba(255, 106, 0, 0.2); border-radius: 10px; border: 1px solid var(--primary);">
+                    <i class="fas fa-bolt"></i> 
+                    <strong> :</strong> Téléchargez maintenant et obtenez 30 jours premium GRATUITS !
+                    <span class="urgency">LIMITÉ</span>
+                </div>
+                
                 <p class="animate delay-1">L'application <strong>N°1</strong> pour regarder toutes vos chaînes préférées en direct sur tous vos appareils.</p>
                 
                 <div class="hero-btns animate delay-3">
-                    <a href="https://play.google.com/store/apps/details?id=africa.boxtvbf" class="btn btn-download">
+                    <a href="https://play.google.com/store/apps/details?id=africa.boxtvbf" 
+                       class="btn btn-download"
+                       onclick="trackDownload('playstore_hero')"
+                       data-track="playstore_hero">
                         <i class="fab fa-google-play"></i> TÉLÉCHARGER GRATUITEMENT
                     </a>
                     <a href="#features" class="btn btn-outline">Voir les fonctionnalités</a>
@@ -1467,7 +1578,8 @@
                            class="btn" 
                            target="_blank" 
                            rel="noopener noreferrer"
-                           onclick="trackDownload('playstore')">
+                           onclick="trackDownload('playstore_main')"
+                           data-track="playstore_main">
                             <i class="fab fa-google-play"></i> Télécharger
                         </a>
                     </div>
@@ -1481,7 +1593,8 @@
                         <a href="https://apkcombo.com/fr/africa-box-tv/africa.boxtvbf/download/apk" 
                            class="btn" 
                            download
-                           onclick="trackDownload('apk')">
+                           onclick="trackDownload('apk_main')"
+                           data-track="apk_main">
                             <i class="fas fa-download"></i> Télécharger APK
                         </a>
                     </div>
@@ -1502,116 +1615,6 @@
         </div>
     </section>
 
-    <!-- Screenshots Section Modifiée -->
-    <section id="screenshots" class="screenshots">
-        <div class="container">
-            <h2 class="section-title">Découvrez l'application</h2>
-            <div class="screenshots-container">
-                <div class="screenshots-slider">
-                    <div class="screenshot">
-                        <img src="https://i.ibb.co/nqf0Hmrh/Add-Text-11-28-11-39-24.png" alt="Interface Africa Box - Accueil" loading="lazy">
-                    </div>
-                    <div class="screenshot">
-                        <img src="https://i.ibb.co/V0tMG1hR/Add-Text-11-28-12-46-34.png" alt="Africa Box - Chaînes TV" loading="lazy">
-                    </div>
-                    <div class="screenshot">
-                        <img src="https://i.ibb.co/SXYXctZ5/Add-Text-11-28-01-05-26.png" alt="Africa Box - Films et séries" loading="lazy">
-                    </div>
-                    <div class="screenshot">
-                        <img src="https://i.ibb.co/sJpqpC5C/Add-Text-11-28-03-26-38.jpg" alt="Africa Box - Sports en direct" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="carousel-arrows">
-                    <div class="carousel-arrow prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    <div class="carousel-arrow next">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </div>
-                
-                <div class="carousel-controls">
-                    <div class="carousel-dot active" data-index="0"></div>
-                    <div class="carousel-dot" data-index="1"></div>
-                    <div class="carousel-dot" data-index="2"></div>
-                    <div class="carousel-dot" data-index="3"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Channels Section -->
-    <section id="channels" class="channels-section">
-        <div class="container">
-            <h2 class="section-title">Chaînes et Bouquets Disponibles</h2>
-            <p style="text-align: center; margin-bottom: 30px;">Découvrez une sélection des chaînes et bouquets disponibles sur AFRICA BOX</p>
-            
-            <div class="channels-carousel-container">
-                <div class="channels-carousel">
-                    <!-- Logos des chaînes TV -->
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/nqf0Hmrh/Add-Text-11-28-11-39-24.png" alt="Logo Canal+" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/V0tMG1hR/Add-Text-11-28-12-46-34.png" alt="Logo BeIN Sports" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/SXYXctZ5/Add-Text-11-28-01-05-26.png" alt="Logo RTI" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/rDDSfYD/tv-orange-1024x659.jpg" alt="Logo ORTP" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/4w4t3gCQ/Add-Text-08-15-12-42-35.png" alt="Logo 2STV" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/WvW7y24q/Add-Text-08-15-12-43-02.png" alt="Logo TV5 Monde" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/GgcWnnT/image-25.png" alt="Logo France 24" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/gbGQ20NF/new-world-1-300.jpg" alt="Logo BBC" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/1YrwpZQJ/BFfLV0y.png" alt="Logo CNN" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/TBgYY53n/images-4.png" alt="Logo ESPN" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/XxYT5L0v/iz9qHZk.png" alt="Logo Al Jazeera" loading="lazy">
-                    </div>
-                    <div class="channel-logo">
-                        <img src="https://i.ibb.co/LzyTXPmv/canal2int2.png" alt="Logo MTV" loading="lazy">
-                    </div>
-                </div>
-                
-                <div class="channels-controls">
-                    <div class="channels-arrow channels-prev">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    <div class="channels-arrow channels-next">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="channels-dots">
-                <div class="channels-dot active" data-index="0"></div>
-                <div class="channels-dot" data-index="1"></div>
-                <div class="channels-dot" data-index="2"></div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 30px;">
-                <p>Et bien plus encore! <strong>30,000+ chaînes</strong> de tous les pays africains et internationaux.</p>
-                <a href="#download" class="btn" style="margin-top: 15px;">
-                    <i class="fas fa-tv"></i> Voir toutes les chaînes
-                </a>
-            </div>
-        </div>
-    </section>
     
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
@@ -1759,7 +1762,10 @@
                 <div class="footer-column">
                     <h3>Télécharger</h3>
                     <p>Disponible sur le Google Play Store</p>
-                    <a href="https://play.google.com/store/apps/details?id=africa.boxtvbf" class="btn">
+                    <a href="https://play.google.com/store/apps/details?id=africa.boxtvbf" 
+                       class="btn"
+                       onclick="trackDownload('playstore_footer')"
+                       data-track="playstore_footer">
                         <i class="fab fa-google-play"></i> Google Play
                     </a>
                 </div>
@@ -1774,6 +1780,55 @@
     <a href="https://wa.me/22601252138?text=Bonjour%20AFRICA%20BOX,%20j'aimerais%20en%20savoir%20plus" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Modal de conversion NOUVEAU -->
+    <div id="conversionModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal-icon">
+                <i class="fas fa-gift"></i>
+            </div>
+            
+            <h2 class="modal-title">Offre Spéciale !</h2>
+            
+            <p class="modal-text">
+                <strong>Félicitations !</strong> En venant de notre publicité Facebook, vous avez accès à une version premium gratuite pendant 30 jours !
+            </p>
+            
+            <div class="modal-urgency">
+                <i class="fas fa-clock"></i> Cette offre expire dans <span id="modalTimer">05:00</span>
+            </div>
+        
+           
+            <div class="modal-buttons">
+                <a href="https://play.google.com/store/apps/details?id=africa.boxtvbf" 
+                   class="btn btn-download modal-button"
+                   onclick="trackDownload('modal_playstore')"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fab fa-google-play"></i> TÉLÉCHARGER GRATUITEMENT
+                </a>
+                
+                <a href="https://apkcombo.com/fr/africa-box-tv/africa.boxtvbf/download/apk" 
+                   class="btn modal-button"
+                   onclick="trackDownload('modal_apk')"
+                   download>
+                    <i class="fas fa-download"></i> Télécharger APK Direct
+                </a>
+                
+                <button class="btn btn-outline modal-button" id="modalLater">
+                    <i class="fas fa-clock"></i> Me rappeler plus tard
+                </button>
+            </div>
+            
+            <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">
+                <i class="fas fa-shield-alt"></i> 100% Sécurisé • Aucun spam • Installation simple
+            </p>
+        </div>
+    </div>
 
     <script>
     // Menu mobile
@@ -1888,7 +1943,7 @@
             
             // Démarrer le défilement automatique
             function startAutoPlay() {
-                slideInterval = setInterval(nextSlide, 4000); // Change toutes les 4 secondes
+                slideInterval = setInterval(nextSlide, 4000);
             }
             
             // Arrêter le défilement automatique
@@ -1932,7 +1987,7 @@
                 // Pour les appareils tactiles
                 carousel.addEventListener('touchstart', stopAutoPlay);
                 carousel.addEventListener('touchend', () => {
-                    setTimeout(startAutoPlay, 5000); // Redémarre après 5 secondes d'inactivité
+                    setTimeout(startAutoPlay, 5000);
                 });
             }
             
@@ -1954,8 +2009,8 @@
         
         if (channelsCarousel && channelLogos.length > 0) {
             let currentChannelSet = 0;
-            const channelSets = 3; // 3 ensembles de logos
-            const logosPerSet = 4; // 4 logos visibles à la fois sur mobile
+            const channelSets = 3;
+            const logosPerSet = 4;
             
             // Fonction pour aller à un ensemble de logos spécifique
             function goToChannelSet(index) {
@@ -1982,7 +2037,7 @@
             
             // Démarrer le défilement automatique
             function startChannelsAutoPlay() {
-                setInterval(nextChannelSet, 5000); // Change toutes les 5 secondes
+                setInterval(nextChannelSet, 5000);
             }
             
             // Événements pour les flèches de navigation
@@ -2057,28 +2112,177 @@
                 img.classList.add('loaded');
             });
         }
+        
+        // Gestion de la modal de conversion
+        const modal = document.getElementById('conversionModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalLater = document.getElementById('modalLater');
+        const modalTimer = document.getElementById('modalTimer');
+        
+        // Vérifier si l'utilisateur vient de Facebook
+        function isFromFacebook() {
+            const referrer = document.referrer.toLowerCase();
+            return referrer.includes('facebook.com') || 
+                   referrer.includes('fb.com') ||
+                   window.location.href.includes('fbclid') ||
+                   document.cookie.includes('facebook_referral=true');
+        }
+        
+        // Vérifier si l'utilisateur a déjà téléchargé
+        function hasDownloaded() {
+            return localStorage.getItem('africaBox_downloaded') === 'true' ||
+                   sessionStorage.getItem('africaBox_downloaded') === 'true';
+        }
+        
+        // Vérifier si la modal a déjà été affichée
+        function hasSeenModal() {
+            return localStorage.getItem('africaBox_modal_seen') === 'true';
+        }
+        
+        // Marquer la modal comme vue
+        function markModalSeen() {
+            localStorage.setItem('africaBox_modal_seen', 'true');
+        }
+        
+        // Marquer le téléchargement comme effectué
+        function markDownloaded() {
+            localStorage.setItem('africaBox_downloaded', 'true');
+            sessionStorage.setItem('africaBox_downloaded', 'true');
+        }
+        
+        // Timer pour l'offre limitée (5 minutes)
+        let timeLeft = 5 * 60;
+        
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            modalTimer.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                modalTimer.textContent = "OFFRE TERMINÉE";
+                modalTimer.style.color = "#ff0000";
+            }
+        }
+        
+        // Afficher la modal
+        function showModal() {
+            if (isFromFacebook() && !hasDownloaded() && !hasSeenModal()) {
+                // Attendre 3 secondes pour une meilleure expérience utilisateur
+                setTimeout(() => {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    markModalSeen();
+                    
+                    // Démarrer le timer
+                    setInterval(updateTimer, 1000);
+                    updateTimer();
+                }, 3000);
+            }
+        }
+        
+        // Fermer la modal
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Événements
+        if (modalClose) {
+            modalClose.addEventListener('click', closeModal);
+        }
+        
+        if (modalLater) {
+            modalLater.addEventListener('click', function() {
+                closeModal();
+                // Rediriger vers la section téléchargement
+                document.querySelector('#download').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        
+        // Fermer la modal en cliquant à l'extérieur
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // Écouter les clics sur les boutons de téléchargement
+        document.querySelectorAll('a[href*="play.google.com"], a[href*="apkcombo.com"], a[download]').forEach(link => {
+            link.addEventListener('click', function() {
+                markDownloaded();
+                closeModal();
+                
+                // Tracking spécifique
+                const downloadType = this.href.includes('play.google.com') ? 'playstore' : 'apk';
+                trackDownload(downloadType + '_from_button');
+            });
+        });
+        
+        // Afficher la modal automatiquement si conditions remplies
+        showModal();
+        
+        // Afficher la modal lors du défilement vers la section téléchargement
+        let scrollTriggered = false;
+        
+        window.addEventListener('scroll', function() {
+            const downloadSection = document.getElementById('download');
+            if (downloadSection && !scrollTriggered && !hasDownloaded() && !hasSeenModal()) {
+                const sectionTop = downloadSection.offsetTop;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                
+                if (scrollPosition > sectionTop + 100 && !modal.style.display || modal.style.display === 'none') {
+                    scrollTriggered = true;
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    markModalSeen();
+                }
+            }
+        });
+        
+        // Afficher la modal quand l'utilisateur essaie de quitter la page
+        window.addEventListener('beforeunload', function(e) {
+            if (!hasDownloaded() && !hasSeenModal()) {
+                // Cette technique montre la modal quand l'utilisateur essaie de partir
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                
+                // Empêcher la fermeture immédiate
+                e.preventDefault();
+                e.returnValue = '';
+                
+                return "Attendez ! Vous n'avez pas encore téléchargé AFRICA BOX !";
+            }
+        });
     });
 
     // Track downloads
     function trackDownload(type) {
-        // Ici vous pouvez implémenter le tracking Google Analytics, Facebook Pixel, etc.
-        console.log('Download initiated: ' + type);
+        console.log('Download tracked: ' + type);
         
-        // Exemple pour Facebook Pixel
+        // Facebook Pixel
         if (typeof fbq !== 'undefined') {
-            fbq('track', 'InitiateCheckout', {
-                content_type: 'application',
-                content_name: 'Africa Box ' + type
+            fbq('track', 'Lead', {
+                content_name: 'Africa Box ' + type,
+                value: 0.00,
+                currency: 'USD'
             });
         }
         
-        // Exemple pour Google Analytics
+        // Google Analytics
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'download', {
-                'event_category': 'application',
-                'event_label': 'Africa Box ' + type
+            gtag('event', 'conversion', {
+                'send_to': 'AW-YOUR_CONVERSION_ID/AW-YOUR_LABEL',
+                'value': 0.00,
+                'currency': 'USD',
+                'transaction_id': 'download_' + Date.now()
             });
         }
+        
+        // Marquer comme téléchargé
+        localStorage.setItem('africaBox_downloaded', 'true');
+        sessionStorage.setItem('africaBox_downloaded', 'true');
     }
 </script>
 </body>
