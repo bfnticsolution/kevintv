@@ -49,6 +49,28 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Google Analytics (GA4) - REMPLACEZ G-6VC5NZPE31 PAR VOTRE ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VC5NZPE31"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        // REMPLACEZ G-6VC5NZPE31 PAR VOTRE ID DE MESURE GOOGLE ANALYTICS 4
+        gtag('config', 'G-6VC5NZPE31');
+        
+        // Suivi des événements personnalisés
+        function trackGAEvent(action, category, label, value = 1) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', action, {
+                    'event_category': category,
+                    'event_label': label,
+                    'value': value
+                });
+            }
+        }
+    </script>
+    
     <style>
         /* CSS OPTIMISÉ POUR MOBILE */
         *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif}
@@ -211,7 +233,7 @@
     </style>
 </head>
 <body>
-
+  
 
     <!-- Hero Section -->
     <section class="hero">
@@ -236,7 +258,7 @@
                        data-track="playstore_hero">
                         <i class="fab fa-google-play"></i> TÉLÉCHARGER GRATUIT
                     </a>
-                    <a href="#features" class="btn btn-outline">Voir les fonctionnalités</a>
+                    <a href="#features" class="btn btn-outline" onclick="trackGAEvent('click', 'Engagement', 'Features CTA')">Voir les fonctionnalités</a>
                 </div>
                 
                 <div class="social-proof animate delay-3">
@@ -425,7 +447,7 @@
             <h2 class="section-title">Questions Fréquentes</h2>
             <div class="faq-list">
                 <div class="faq-item animate">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="trackGAEvent('click', 'FAQ', 'Question 1')">
                         <span>Comment télécharger AFRICA BOX ?</span>
                         <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
@@ -435,7 +457,7 @@
                 </div>
                 
                 <div class="faq-item animate delay-1">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="trackGAEvent('click', 'FAQ', 'Question 2')">
                         <span>L'application est-elle vraiment gratuite ?</span>
                         <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
@@ -445,7 +467,7 @@
                 </div>
                 
                 <div class="faq-item animate delay-2">
-                    <div class="faq-question">
+                    <div class="faq-question" onclick="trackGAEvent('click', 'FAQ', 'Question 3')">
                         <span>Sur quels appareils fonctionne AFRICA BOX ?</span>
                         <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
                     </div>
@@ -465,26 +487,26 @@
                     <h3>AFRICA BOX</h3>
                     <p>L'application TV N°1 en Afrique avec plus de 30,000 chaînes TV.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook" onclick="trackGAEvent('click', 'Social', 'Facebook')"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" onclick="trackGAEvent('click', 'Social', 'Twitter')"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram" onclick="trackGAEvent('click', 'Social', 'Instagram')"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Liens Rapides</h3>
                     <ul class="footer-links">
-                        <li><a href="#features">Fonctionnalités</a></li>
-                        <li><a href="#download">Télécharger</a></li>
-                        <li><a href="#testimonials">Avis</a></li>
-                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#features" onclick="trackGAEvent('click', 'Footer', 'Features')">Fonctionnalités</a></li>
+                        <li><a href="#download" onclick="trackGAEvent('click', 'Footer', 'Download')">Télécharger</a></li>
+                        <li><a href="#testimonials" onclick="trackGAEvent('click', 'Footer', 'Testimonials')">Avis</a></li>
+                        <li><a href="#faq" onclick="trackGAEvent('click', 'Footer', 'FAQ')">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Support</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Centre d'aide</a></li>
-                        <li><a href="#">Contactez-nous</a></li>
-                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#" onclick="trackGAEvent('click', 'Footer', 'Help')">Centre d'aide</a></li>
+                        <li><a href="#" onclick="trackGAEvent('click', 'Footer', 'Contact')">Contactez-nous</a></li>
+                        <li><a href="#" onclick="trackGAEvent('click', 'Footer', 'Privacy')">Politique de confidentialité</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -504,14 +526,19 @@
     </footer>
 
     <!-- Floating WhatsApp button -->
-    <a href="https://wa.me/22658286845?text=Bonjour%20AFRICA%20BOX,%20j'aimerais%20en%20savoir%20plus" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactez-nous sur WhatsApp">
+    <a href="https://wa.me/22601252138?text=Bonjour%20AFRICA%20BOX,%20j'aimerais%20en%20savoir%20plus" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Contactez-nous sur WhatsApp"
+       onclick="trackGAEvent('click', 'Contact', 'WhatsApp')">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Modal de conversion -->
     <div id="conversionModal" class="modal-overlay">
         <div class="modal-content">
-            <button class="modal-close" id="modalClose" aria-label="Fermer">
+            <button class="modal-close" id="modalClose" aria-label="Fermer" onclick="trackGAEvent('click', 'Modal', 'Close')">
                 <i class="fas fa-times"></i>
             </button>
             
@@ -538,7 +565,7 @@
                     <i class="fab fa-google-play"></i> TÉLÉCHARGER GRATUIT
                 </a>
                 
-                <button class="btn btn-outline modal-button" id="modalLater">
+                <button class="btn btn-outline modal-button" id="modalLater" onclick="trackGAEvent('click', 'Modal', 'Later')">
                     <i class="fas fa-clock"></i> Plus tard
                 </button>
             </div>
@@ -550,7 +577,7 @@
     </div>
 
     <script>
-    // CODE JAVASCRIPT OPTIMISÉ
+    // CODE JAVASCRIPT AVEC ANALYTICS COMPLET
     document.addEventListener('DOMContentLoaded', function() {
         // Menu mobile
         const menuBtn = document.querySelector('.mobile-menu-btn');
@@ -561,6 +588,11 @@
                 navLinks.classList.toggle('active');
                 menuBtn.classList.toggle('active');
                 document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Track menu toggle
+                if (navLinks.classList.contains('active')) {
+                    trackGAEvent('open', 'Navigation', 'Mobile Menu');
+                }
             });
 
             // Fermer le menu en cliquant sur un lien
@@ -581,6 +613,9 @@
                 if (targetId === '#') return;
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Track section navigation
+                    trackGAEvent('scroll_to', 'Navigation', targetId.replace('#', ''));
+                    
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -594,10 +629,18 @@
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
             question.addEventListener('click', () => {
+                const isOpening = !item.classList.contains('active');
+                const questionText = question.querySelector('span').textContent;
+                
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) otherItem.classList.remove('active');
                 });
                 item.classList.toggle('active');
+                
+                // Track FAQ interaction
+                if (isOpening) {
+                    trackGAEvent('open', 'FAQ', questionText.substring(0, 50));
+                }
             });
         });
 
@@ -608,17 +651,28 @@
         
         // Vérifier si vient de Facebook
         function isFromFacebook() {
-            return document.referrer.includes('facebook.com') || 
-                   document.referrer.includes('fb.com') ||
-                   window.location.href.includes('fbclid');
+            const ref = document.referrer;
+            const url = window.location.href;
+            return ref.includes('facebook.com') || 
+                   ref.includes('fb.com') ||
+                   url.includes('fbclid') ||
+                   url.includes('utm_source=facebook');
         }
         
+        // Suivi du temps passé sur la page
+        let pageViewStart = Date.now();
+        let modalShown = false;
+        
         function showModal() {
-            if (isFromFacebook() && !localStorage.getItem('modalShown')) {
+            if (isFromFacebook() && !localStorage.getItem('modalShown') && !modalShown) {
                 setTimeout(() => {
                     modal.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
                     localStorage.setItem('modalShown', 'true');
+                    modalShown = true;
+                    
+                    // Track modal display
+                    trackGAEvent('view', 'Modal', 'Conversion Offer');
                     
                     // Timer
                     let timeLeft = 300;
@@ -626,8 +680,9 @@
                     const timerInterval = setInterval(() => {
                         if (timeLeft <= 0) {
                             clearInterval(timerInterval);
-                            modal.style.display = 'none';
-                            document.body.style.overflow = 'auto';
+                            modalTimer.textContent = "OFFRE TERMINÉE";
+                            modalTimer.style.color = "#ff0000";
+                            trackGAEvent('expire', 'Modal', 'Timer Ended');
                         } else {
                             const minutes = Math.floor(timeLeft / 60);
                             const seconds = timeLeft % 60;
@@ -635,7 +690,7 @@
                             timeLeft--;
                         }
                     }, 1000);
-                }, 2000);
+                }, 3000); // 3 secondes après le chargement
             }
         }
         
@@ -643,6 +698,7 @@
             modalClose.addEventListener('click', () => {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
+                trackGAEvent('close', 'Modal', 'User Closed');
             });
         }
         
@@ -650,6 +706,7 @@
             modalLater.addEventListener('click', () => {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
+                trackGAEvent('click', 'Modal', 'Remind Later');
             });
         }
         
@@ -660,8 +717,41 @@
             }
         });
         
-        // Afficher modal
+        // Afficher modal après un certain temps ou scroll
         showModal();
+        
+        // Track scroll depth
+        let scrollDepthTracked = [25, 50, 75, 100];
+        window.addEventListener('scroll', function() {
+            const scrollPercentage = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            
+            scrollDepthTracked.forEach(depth => {
+                if (scrollPercentage >= depth) {
+                    trackGAEvent('scroll', 'Engagement', `Scroll ${depth}%`);
+                    scrollDepthTracked = scrollDepthTracked.filter(d => d !== depth);
+                }
+            });
+            
+            // Show modal when user scrolls to download section
+            const downloadSection = document.getElementById('download');
+            if (downloadSection && !modalShown && !localStorage.getItem('modalShown')) {
+                const sectionTop = downloadSection.offsetTop;
+                const scrollPosition = window.scrollY + window.innerHeight;
+                
+                if (scrollPosition > sectionTop + 100 && modal.style.display !== 'flex') {
+                    modal.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    modalShown = true;
+                    trackGAEvent('show', 'Modal', 'Scroll Triggered');
+                }
+            }
+        });
+        
+        // Track time on page when leaving
+        window.addEventListener('beforeunload', function() {
+            const timeSpent = Math.round((Date.now() - pageViewStart) / 1000);
+            trackGAEvent('time_spent', 'Engagement', 'Page Visit', timeSpent);
+        });
         
         // Animation au scroll
         const observer = new IntersectionObserver((entries) => {
@@ -669,6 +759,11 @@
                 if (entry.isIntersecting) {
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
+                    
+                    // Track section views
+                    if (entry.target.classList.contains('feature-card')) {
+                        trackGAEvent('view', 'Content', 'Feature Card');
+                    }
                 }
             });
         }, { threshold: 0.1 });
@@ -678,12 +773,44 @@
             el.style.transform = 'translateY(20px)';
             observer.observe(el);
         });
+        
+        // Track clicks on external links
+        document.querySelectorAll('a[href*="play.google.com"], a[href*="apkcombo.com"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.href;
+                const isPlayStore = href.includes('play.google.com');
+                
+                // Track before navigating away
+                trackGAEvent('click', 'Download', isPlayStore ? 'Play Store' : 'APK Direct');
+                
+                // Small delay to ensure tracking fires
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+        });
     });
 
-    // Track downloads
+    // Fonction de suivi des téléchargements
     function trackDownload(type) {
         console.log('Download tracked: ' + type);
-        localStorage.setItem('downloaded', 'true');
+        
+        // Google Analytics 4
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'download', {
+                'event_category': 'conversion',
+                'event_label': type,
+                'value': 1
+            });
+            
+            // Événement de conversion
+            gtag('event', 'conversion', {
+                'send_to': 'AW-YOUR_CONVERSION_ID/AW-YOUR_LABEL',
+                'value': 0.00,
+                'currency': 'USD',
+                'transaction_id': 'dl_' + Date.now() + '_' + type
+            });
+        }
         
         // Facebook Pixel
         if (typeof fbq !== 'undefined') {
@@ -694,14 +821,24 @@
             });
         }
         
-        // Google Analytics
+        // Marquer comme téléchargé
+        localStorage.setItem('africaBox_downloaded', 'true');
+        sessionStorage.setItem('africaBox_downloaded', 'true');
+        
+        // Track in our custom function
+        trackGAEvent('click', 'Download', type);
+    }
+
+    // Fonction helper pour GA
+    function trackGAEvent(action, category, label, value = 1) {
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-YOUR_CONVERSION_ID/AW-YOUR_LABEL',
-                'value': 0.00,
-                'currency': 'USD'
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label,
+                'value': value
             });
         }
+        console.log('GA Event:', action, category, label, value);
     }
     </script>
 </body>
